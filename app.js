@@ -17,7 +17,7 @@ mongoose.set('strictQuery', false);
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/itemsDB');                           //connection to database
+  await mongoose.connect(process.env.MONGODB_URI);                           //connection to database
 }
 
 const itemsSchema = new mongoose.Schema({                                               //database schema
